@@ -1,0 +1,27 @@
+<div class="col-sm-8 text-left" *ngIf="spaceXDataList.length>0">
+    <div class="col-sm-3" *ngFor="let spaceXItem of spaceXDataList">
+      <div class="row" style="background-color:#ffffff;margin: 2px;">
+        <div class="thumbnail">
+            <img src="{{spaceXItem.links.mission_patch}}" alt="Lights" style="width:100%">
+        </div>
+        <div class="caption">
+          <p class="content-text">{{spaceXItem.mission_name}}</p>
+        </div>
+        <p>
+          <strong>Mission Ids: </strong>
+        </p>
+        <ul>
+          <li *ngFor="let missionId of spaceXItem.mission_id"><span class="content-text">{{missionId.join()}}</span></li>
+        </ul>
+        <p><strong>Launch Year: </strong><span class="content-text">{{spaceXItem.launch_year}}</span></p>
+        <p><strong>SuccessFul Launch: </strong><span class="content-text">{{spaceXItem.launch_success}}</span></p>
+        <p><strong>SuccessFul Landing: </strong><span class="content-text">{{spaceXItem.upcoming}}</span></p>
+      </div>
+    </div>
+</div>
+<div class="col-sm-8 text-left" *ngIf="spaceXDataList.length==0">
+  <div class="caption">
+    <p class="content-text">Load...</p>
+  </div>
+</div>
+
